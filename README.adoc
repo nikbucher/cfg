@@ -1,0 +1,14 @@
+= Dotfiles for https://twitter.com/nikbucher[@nikbucher]
+
+Adapted sources from Dotfiles for https://twitter.com/durdn[@durdn] > https://bitbucket.org/durdn/cfg[bitbucket.org/durdn/cfg]
+
+== Requirements
+
+- Git
+- Curl
+
+== Install
+
+Install config tracking in your $HOME by running:
+
+ curl -Lks https://raw.githubusercontent.com/nikbucher/cfg/master/.bin/install.sh | /bin/bash

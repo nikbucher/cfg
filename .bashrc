@@ -17,13 +17,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#setxkbmap -layout ch -variant de_nodeadkeys
+if [ -f ~/.local_bashrc ]; then
+    . ~/.local_bashrc
+fi
 
 # homebrew git autocompletions
 if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
 . `brew --prefix`/etc/bash_completion.d/git-completion.bash
 fi
 
+#setxkbmap -layout ch -variant de_nodeadkeys
 
 # exports
 function xdu() {

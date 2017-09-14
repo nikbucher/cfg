@@ -1,0 +1,20 @@
+#set page-completions on
+#set completion-ignore-case on
+#set completion-query-items 200
+#set show-all-if-ambiguous on
+#set show-all-if-unmodified on
+#set visible-stats on
+#TAB: menu-complete
+
+set completion-ignore-case on
+set bell-style none
+set editing-mode vi
+
+$if mode=vi
+  set keymap vi-command
+  "gg": beginning-of-history
+  "G": end-of-history
+  set keymap vi-insert
+  "jj": vi-movement-mode
+  "\C-p": history-search-backward
+  "\C-l": clear-screen

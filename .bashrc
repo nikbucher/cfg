@@ -22,7 +22,7 @@ if [ -f ~/.local_bashrc ]; then
 fi
 
 # homebrew git autocompletions
-if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+if hash brew 2>/dev/null && [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
 . `brew --prefix`/etc/bash_completion.d/git-completion.bash
 fi
 

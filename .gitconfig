@@ -7,8 +7,8 @@
 	name = Niklaus Bucher
 	email = niklaus@bucher.io
 
-[includeIf "gitdir:~/source/work/"]
-	path = ~/source/work/.gitconfig
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig
 
 [push]
 	default = current

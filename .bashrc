@@ -46,4 +46,4 @@ source ~/.bash_prompt
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.bin:$HOME/.npm-packages/bin:$PATH
 # }}}
-
+export GOPATH="$HOME/source/go"

@@ -44,6 +44,6 @@ source ~/.bash_prompt
 #source ~/.bash_liquidprompt
 
 # Set .bin in PATH and it should be first {{{
-export PATH=$HOME/.bin:$HOME/.npm-packages/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
 # }}}
 export GOPATH="$HOME/source/go"

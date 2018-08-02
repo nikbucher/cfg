@@ -17,10 +17,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.local_bashrc ]; then
-    . ~/.local_bashrc
-fi
-
 # homebrew git autocompletions
 if hash brew 2>/dev/null && [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
 . `brew --prefix`/etc/bash_completion.d/git-completion.bash
@@ -44,6 +40,12 @@ source ~/.bash_prompt
 #source ~/.bash_liquidprompt
 
 # Set .bin in PATH and it should be first {{{
-export PATH=$HOME/.local/bin:$HOME/.bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
 # }}}
+
 export GOPATH="$HOME/source/go"
+
+# allow local customizations
+if [ -f ~/.local_bashrc ]; then
+    . ~/.local_bashrc
+fi

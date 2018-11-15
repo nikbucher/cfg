@@ -25,17 +25,6 @@ fi
 
 #setxkbmap -layout ch -variant de_nodeadkeys
 
-# exports
-function xdu() {
-	if [ -z $1 ]; then
-		du -sch .[!.]* * | sort -h
-	else
-		du -sch $1/.[!.]* $1/* | sort -h
-	fi
-	return 0
-}
-alias xdu='xdu'
-
 # prompt
 source ~/.bash_prompt
 #source ~/.bash_liquidprompt

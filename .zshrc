@@ -2,14 +2,24 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/nbucher/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+export ZSH_DISABLE_COMPFIX=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+
+# git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time) 
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+#POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='$ '
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,9 +107,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+alias g='./gradlew'
+alias gp='./gradlew --parallel'
+alias gd='./gradlew --daemon'
+alias gg='./gradlew --parallel --daemon'
 
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH

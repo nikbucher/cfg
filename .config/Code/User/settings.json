@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "Dockerfile.dev": "dockerfile"
+    },
+    "window.zoomLevel": 0,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

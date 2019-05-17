@@ -16,5 +16,9 @@
     "telemetry.enableTelemetry": false,
     "workbench.enableExperiments": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
-    "update.enableWindowsBackgroundUpdates": false
+    "update.enableWindowsBackgroundUpdates": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.renderWhitespace": "all"
 }

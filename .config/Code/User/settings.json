@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "Dockerfile.dev": "dockerfile"
+        "Dockerfile.dev": "dockerfile",
+        "*Dockerfile": "dockerfile"
     },
     "window.zoomLevel": 0,
     "terminal.integrated.fontFamily": "Source Code Pro for Powerline",

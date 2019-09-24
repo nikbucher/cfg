@@ -4,7 +4,6 @@
         "*Dockerfile": "dockerfile"
     },
     "window.zoomLevel": 0,
-    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -21,5 +20,6 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "editor.fontFamily": "'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 }

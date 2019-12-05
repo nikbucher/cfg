@@ -75,6 +75,7 @@ plugins=(
   git
   node
   npm
+  sdk
 )
 
 source $ZSH/oh-my-zsh.sh

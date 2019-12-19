@@ -1,8 +1,8 @@
 [core]
 	autocrlf = input
 	editor = /usr/bin/vim
-#	pager=less -x4
-	pager=more
+#	pager=less -R
+	pager=more -R
 #	pager=cat
 
 [user]

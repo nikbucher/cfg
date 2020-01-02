@@ -2,7 +2,7 @@
 	autocrlf = input
 	editor = /usr/bin/vim
 #	pager=less -R
-	pager=more -R
+	pager=more -R || (more && exit 1)
 #	pager=cat
 
 [user]

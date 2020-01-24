@@ -70,8 +70,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-HISTSIZE=10000000
-SAVEHIST=10000000
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -130,6 +128,9 @@ alias gg='./gradlew --parallel --daemon'
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
 # }}}
+
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 # allow local customizations
 if [ -f ~/.local_zshrc ]; then

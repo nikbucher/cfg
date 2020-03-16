@@ -21,5 +21,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.renderWhitespace": "all",
-    "editor.fontFamily": "'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
+    "editor.fontFamily": "'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.copyWithSyntaxHighlighting": false
 }

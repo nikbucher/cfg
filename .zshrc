@@ -125,6 +125,11 @@ alias gp='./gradlew --parallel'
 alias gd='./gradlew --daemon'
 alias gg='./gradlew --parallel --daemon'
 
+function numstats() {
+    awk 'NR == 1 { max=$1; min=$1; sum=0 } { if ($1>max) max=$1; if ($1<min) min=$1; sum+=$1;} END {printf "\n      #: %d\n    Min: %d\n    Max: %d\nAverage: %f\n    Sum: %d\n", NR, min, max, sum/NR, sum}'
+}
+alias numstats='numstats'
+
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
 # }}}

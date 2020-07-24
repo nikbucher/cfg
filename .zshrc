@@ -131,7 +131,7 @@ function numstats() {
 alias numstats='numstats'
 
 function durationstats() {
-    mlr --oxtab label duration then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,sum -f duration
+    mlr --oxtab label duration then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,p99,sum -f duration
 }
 alias durationstats='durationstats'
 

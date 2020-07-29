@@ -1,3 +1,5 @@
+export ZSH_DISABLE_COMPFIX="true"
+
 # <custom installations>
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -12,8 +14,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-export ZSH_DISABLE_COMPFIX=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

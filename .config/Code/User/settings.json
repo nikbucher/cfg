@@ -22,5 +22,11 @@
     },
     "editor.renderWhitespace": "all",
     "editor.fontFamily": "'JetBrains Mono', 'MesloLGS NF', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.copyWithSyntaxHighlighting": false
+    "editor.copyWithSyntaxHighlighting": false,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "search.exclude": {
+        "**/.git": true
+    }
 }

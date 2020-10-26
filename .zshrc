@@ -125,15 +125,15 @@ alias gp='./gradlew --parallel'
 alias gd='./gradlew --daemon'
 alias gg='./gradlew --parallel --daemon'
 
-function numstats() {
+function awkstats() {
     awk 'NR == 1 { max=$1; min=$1; sum=0 } { if ($1>max) max=$1; if ($1<min) min=$1; sum+=$1;} END {printf "\n      #: %d\n    Min: %d\n    Max: %d\nAverage: %f\n    Sum: %d\n", NR, min, max, sum/NR, sum}'
 }
-alias numstats='numstats'
+alias awkstats='awkstats'
 
-function durationstats() {
-    mlr --oxtab label duration then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,p99,sum -f duration
+function numstats() {
+    mlr --oxtab label num then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,p99,sum -f num
 }
-alias durationstats='durationstats'
+alias numstats='numstats'
 
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH

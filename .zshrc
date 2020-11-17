@@ -142,6 +142,11 @@ export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bi
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  bindkey '[C' forward-word
+  bindkey '[D' backward-word
+fi
+
 # allow local customizations
 if [ -f ~/.local_zshrc ]; then
     . ~/.local_zshrc

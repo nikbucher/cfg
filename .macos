@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+# initially from ~/.macos — https://mths.be/macos
+
+# some ideas https://gist.github.com/brandonb927/3195465/
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+for app in "Activity Monitor" \
+	"Finder" \
+	; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."

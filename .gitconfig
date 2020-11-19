@@ -9,8 +9,11 @@
 	name = Niklaus Bucher
 	email = niklaus@bucher.io
 
-[includeIf "gitdir:~/source/adc/"]
-	path = ~/source/adc/.gitconfig
+[includeIf "gitdir:~/dev/adc/"]
+	path = ~/dev/adc/.gitconfig
+
+[includeIf "gitdir:~/dev/prelogic/"]
+	path = ~/dev/prelogic/.gitconfig
 
 [push]
 	default = current

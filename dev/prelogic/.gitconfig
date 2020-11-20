@@ -1,3 +1,7 @@
 [user]
-        name = Niklaus Bucher
-        email = niklaus.bucher@prelogic.ch
+	name = Niklaus Bucher
+	email = niklaus.bucher@prelogic.ch
+
+[credential]
+	helper = osxkeychain
+# git@5.226.148.162

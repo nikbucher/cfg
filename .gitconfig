@@ -73,7 +73,7 @@
 	xgrep = "!f() { git grep $1 `git ls-remote | grep -Po '(?<=refs/heads/).*' | xargs -I{} echo origin/{}` -- $2; }; f"
 	xdiff = "!f() { git diff $1^..$1; }; f"
 	foreach = "!f() { find . -maxdepth 2 -name '.git' | xargs -i{} /bin/bash -c \"echo -e '\\e[1m>>> repo {}\\e[0m'; git --git-dir={} --work-tree={}/.. $@\"; }; f"
-	fe = "!f() { args=\"$@\"; find . -maxdepth 2 -name '.git' | sort | xargs -i{} /bin/bash -c \"cd {}/..; printf '===> '; pwd; git $args;\"; }; f"
+	fe = "!f() { args=\"$@\"; _pwd=`pwd`; find . -maxdepth 2 -name '.git' | sort | while read _d; do cd ${_pwd}/${_d}/..; printf '===> '; pwd; git ${args}; done; cd ${_pwd}; }; f"
 	sync = "!f() { while(true); do git pull --rebase -q; git push -q; sleep 1; done; }; f"
 
 	#quick look at all repo

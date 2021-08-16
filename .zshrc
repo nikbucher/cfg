@@ -5,8 +5,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 # </custom installations>
 
 # If you come from bash you might have to change your $PATH.
@@ -126,12 +126,12 @@ alias gd='./gradlew --daemon'
 alias gg='./gradlew --parallel --daemon'
 
 function awkstats() {
-    awk 'NR == 1 { max=$1; min=$1; sum=0 } { if ($1>max) max=$1; if ($1<min) min=$1; sum+=$1;} END {printf "\n      #: %d\n    Min: %d\n    Max: %d\nAverage: %f\n    Sum: %d\n", NR, min, max, sum/NR, sum}'
+  awk 'NR == 1 { max=$1; min=$1; sum=0 } { if ($1>max) max=$1; if ($1<min) min=$1; sum+=$1;} END {printf "\n      #: %d\n    Min: %d\n    Max: %d\nAverage: %f\n    Sum: %d\n", NR, min, max, sum/NR, sum}'
 }
 alias awkstats='awkstats'
 
 function numstats() {
-    mlr --oxtab label num then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,p99,sum -f num
+  mlr --oxtab label num then stats1 -a count,min,max,mean,p25,p50,p75,p90,p95,p99,sum -f num
 }
 alias numstats='numstats'
 
@@ -147,7 +147,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   bindkey '[D' backward-word
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # allow local customizations
 if [ -f ~/.local_zshrc ]; then
-    . ~/.local_zshrc
+  . ~/.local_zshrc
 fi
+

@@ -3,7 +3,6 @@
         "Dockerfile.dev": "dockerfile",
         "*Dockerfile": "dockerfile"
     },
-    "window.zoomLevel": 0,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -28,5 +27,10 @@
     },
     "search.exclude": {
         "**/.git": true
+    },
+    "redhat.telemetry.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     }
 }

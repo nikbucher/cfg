@@ -136,7 +136,7 @@ function numstats() {
 alias numstats='numstats'
 
 # Set .bin in PATH and it should be first {{{
-export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:/usr/local/sbin:$PATH
 # }}}
 
 HISTSIZE=1000000

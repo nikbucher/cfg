@@ -135,6 +135,26 @@ function numstats() {
 }
 alias numstats='numstats'
 
+function xdu() {
+  if [ -z $1 ]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+      gdu -sch .[!.]* * | sort -h
+    else
+      du -sch .[!.]* * | sort -h
+    fi
+  else
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+      gdu -sch $1/.[!.]* $1/* | sort -h
+    else
+      du -sch $1/.[!.]* $1/* | sort -h
+    fi
+  fi
+  return 0
+}
+alias xdu='xdu'
+
+alias t='todo.sh'
+
 # Set .bin in PATH and it should be first {{{
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/.npm-packages/bin:$HOME/.eclipse/bin:/usr/local/sbin:$PATH
 # }}}

@@ -1,5 +1,15 @@
 export ZSH_DISABLE_COMPFIX="true"
 
+# <zsh-completions>
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  # don't load here - it's loaded by `source $ZSH/oh-my-zsh.sh`
+  # autoload -Uz compinit
+  # compinit
+fi
+# </zsh-completions
+
 # <custom installations>
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -171,13 +181,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   bindkey '[C' forward-word
   bindkey '[D' backward-word
 fi
-
-# if type brew &>/dev/null; then
-#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-#   autoload -Uz compinit
-#   compinit
-# fi
 
 # allow local customizations
 if [ -f ~/.local_zshrc ]; then

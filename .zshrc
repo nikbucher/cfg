@@ -172,12 +172,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   bindkey '[D' backward-word
 fi
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-  autoload -Uz compinit
-  compinit
-fi
+#   autoload -Uz compinit
+#   compinit
+# fi
 
 # allow local customizations
 if [ -f ~/.local_zshrc ]; then

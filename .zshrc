@@ -137,6 +137,10 @@ alias gp='./gradlew --parallel'
 alias gd='./gradlew --daemon'
 alias gg='./gradlew --parallel --daemon'
 
+alias m='./mvnw'
+alias mp='./mvnw -T1C'
+
+
 function awkstats() {
   awk 'NR == 1 { max=$1; min=$1; sum=0 } { if ($1>max) max=$1; if ($1<min) min=$1; sum+=$1;} END {printf "\n      #: %d\n    Min: %d\n    Max: %d\nAverage: %f\n    Sum: %d\n", NR, min, max, sum/NR, sum}'
 }

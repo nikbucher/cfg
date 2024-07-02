@@ -16,7 +16,7 @@
 	path = ~/dev/prelogic/.gitconfig
 
 [init]
-	defaultBranch = master
+	defaultBranch = main
 
 [push]
 	default = current
